@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Security Connect Blog</title>
+    <title>Security Connect Global — Strategic Intelligence</title>
     
+    <!-- Google Fonts: IBM Plex Serif (more authoritative) + Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
     
     <style>
+        /* --- RESET --- */
         * {
             margin: 0;
             padding: 0;
@@ -30,6 +32,7 @@
             padding: 0 28px;
         }
 
+        /* --- HEADER (Darker, More Premium) --- */
         .site-header {
             background: #1a1a1a;
             padding: 28px 0 22px;
@@ -92,6 +95,7 @@
             font-family: 'Inter', sans-serif;
         }
 
+        /* --- HERO (More Refined) --- */
         .hero {
             margin-bottom: 48px;
             padding-bottom: 32px;
@@ -121,6 +125,7 @@
             line-height: 1.8;
         }
 
+        /* --- POSTS GRID --- */
         .posts-grid {
             display: flex;
             flex-direction: column;
@@ -214,6 +219,7 @@
             border-color: #1a1a1a;
         }
 
+        /* --- FOOTER (Darker, More Refined) --- */
         .site-footer {
             background: #1a1a1a;
             padding: 32px 0 36px;
@@ -235,6 +241,7 @@
             margin: 0 8px;
         }
 
+        /* --- EMPTY STATE --- */
         .empty-state {
             text-align: center;
             padding: 60px 20px;
@@ -257,6 +264,7 @@
             margin-top: 4px;
         }
 
+        /* --- RESPONSIVE --- */
         @media (max-width: 700px) {
             .site-header .container {
                 flex-direction: column;
@@ -311,6 +319,7 @@
 </head>
 <body>
 
+    <!-- ===== HEADER (Darker) ===== -->
     <header class="site-header">
         <div class="container">
             <a href="/" class="logo">
@@ -321,6 +330,7 @@
         </div>
     </header>
 
+    <!-- ===== MAIN ===== -->
     <main class="container">
 
         <section class="hero">
@@ -332,23 +342,23 @@
         </section>
 
         <section class="posts-grid" id="posts-grid">
-            <div class="empty-state">
-                <p>No intelligence briefings published yet.</p>
-                <p>Subscribe to receive notifications when new analysis is released.</p>
-            </div>
+            <!-- Posts loaded dynamically -->
         </section>
 
     </main>
 
+    <!-- ===== FOOTER (Darker) ===== -->
     <footer class="site-footer">
         <div class="container">
-            &copy; 2026 <strong>Security Connect Blog</strong> <span class="footer-divider">|</span> All rights reserved <span class="footer-divider">|</span> London &bull; Singapore &bull; Washington
+            &copy; 2026 <strong>Security Connect Global</strong> <span class="footer-divider">|</span> All rights reserved <span class="footer-divider">|</span> London &bull; Singapore &bull; Washington
         </div>
     </footer>
 
+    <!-- ===== NETLIFY IDENTITY ===== -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <script>
+        // --- LOAD POSTS ---
         async function loadPosts() {
             try {
                 const res = await fetch('/posts.json');
@@ -358,6 +368,12 @@
                 const grid = document.getElementById('posts-grid');
                 
                 if (posts.length === 0) {
+                    grid.innerHTML = `
+                        <div class="empty-state">
+                            <p>No intelligence briefings published yet.</p>
+                            <p>Subscribe to receive notifications when new analysis is released.</p>
+                        </div>
+                    `;
                     return;
                 }
 
@@ -386,6 +402,7 @@
 
         loadPosts();
 
+        // --- REDIRECT TO ADMIN IF LOGGED IN ---
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on('init', user => {
                 if (!user) {

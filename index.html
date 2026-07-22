@@ -195,7 +195,6 @@
             line-height: 1.8;
         }
 
-        /* --- NEW: Style for the featured image on the main page --- */
         .post-card .featured-image {
             width: 100%;
             max-height: 400px;
@@ -358,7 +357,7 @@
     <script>
         async function loadPosts() {
             try {
-                // ✅ Points to your blog repository
+                // ✅ CORRECT: Points to your blog repository
                 const response = await fetch('https://api.github.com/repos/Ebuks222/blog/contents/posts');
                 if (!response.ok) {
                     console.log('No posts folder found yet');
@@ -377,14 +376,10 @@
                 for (const file of mdFiles) {
                     const contentRes = await fetch(file.download_url);
                     const content = await contentRes.text();
-                    
-                    // Extract all fields from the post
                     const titleMatch = content.match(/title:\s*["']?(.*?)["']?\n/);
                     const dateMatch = content.match(/date:\s*["']?(.*?)["']?\n/);
                     const categoryMatch = content.match(/category:\s*["']?(.*?)["']?\n/);
                     const excerptMatch = content.match(/excerpt:\s*["']?(.*?)["']?\n/);
-                    
-                    // This is the important part for images:
                     const imageMatch = content.match(/image:\s*["']?(.*?)["']?\n/);
                     
                     posts.push({
@@ -392,7 +387,6 @@
                         date: dateMatch ? dateMatch[1] : new Date().toISOString(),
                         category: categoryMatch ? categoryMatch[1] : '',
                         excerpt: excerptMatch ? excerptMatch[1] : content.substring(0, 200).replace(/---/g, '').trim() + '...',
-                        // This sends the image URL to the main page
                         image: imageMatch ? imageMatch[1] : '',
                         body: content
                     });

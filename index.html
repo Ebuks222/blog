@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
     
+    <!-- ✅ Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -58,6 +61,7 @@
             padding: 36px 40px;
             border-left: 4px solid #8b1a2b;
             transition: box-shadow 0.25s ease, transform 0.2s ease;
+            cursor: pointer;
         }
         .post-card:hover {
             box-shadow: 0 8px 40px rgba(0,0,0,0.06);
@@ -78,10 +82,7 @@
             color: #1a1a1a;
             margin-bottom: 12px;
         }
-        .post-card h2 a {
-            color: inherit;
-            text-decoration: none;
-        }
+        .post-card h2 a { color: inherit; text-decoration: none; }
         .post-card h2 a:hover { color: #8b1a2b; }
         
         .post-card .featured-image {
@@ -102,7 +103,7 @@
         }
         .post-card .read-more:hover { color: #1a1a1a; border-color: #1a1a1a; }
         
-        /* ✅ Full post view (hidden by default) */
+        /* ✅ Full post view */
         .full-post {
             background: #fff;
             border-radius: 8px;
@@ -135,6 +136,73 @@
             font-size: 0.7rem; color: #6b6b6b; text-transform: uppercase; font-weight: 600;
             margin-bottom: 10px;
         }
+        
+        /* ✅ SHARE BUTTONS */
+        .share-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e8e4de;
+        }
+        .share-section p {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .share-btn:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+        .share-btn i { font-size: 1rem; }
+        
+        .share-whatsapp { background: #25D366; }
+        .share-facebook { background: #1877F2; }
+        .share-twitter { background: #000000; }
+        .share-telegram { background: #0088cc; }
+        .share-linkedin { background: #0A66C2; }
+        .share-copy {
+            background: #6b6b6b;
+            position: relative;
+        }
+        .share-copy.copied {
+            background: #8b1a2b;
+        }
+        .share-copy .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a1a1a;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+        }
+        .share-copy:hover .tooltip {
+            display: block;
+        }
+        
         .hidden { display: none; }
         
         .site-footer {
@@ -170,6 +238,8 @@
             .post-card h2 { font-size: 1.6rem; }
             .full-post { padding: 24px; }
             .full-post h1 { font-size: 1.8rem; }
+            .share-buttons { gap: 8px; }
+            .share-btn { padding: 8px 14px; font-size: 0.75rem; }
         }
         @media (max-width: 480px) {
             .container { padding: 0 16px; }
@@ -178,6 +248,8 @@
             .post-card h2 { font-size: 1.4rem; }
             .full-post { padding: 18px; }
             .full-post h1 { font-size: 1.5rem; }
+            .share-btn { padding: 6px 12px; font-size: 0.7rem; }
+            .share-btn span { display: none; }
         }
     </style>
 </head>
@@ -203,18 +275,12 @@
             <p>Rigorous analysis, independent perspective, and actionable foresight — curated for decision-makers who need clarity in an uncertain global landscape.</p>
         </section>
 
-        <!-- ✅ Main page: list of posts -->
         <div id="main-page">
-            <section class="posts-grid" id="posts-grid">
-                <!-- Posts will appear here -->
-            </section>
+            <section class="posts-grid" id="posts-grid"></section>
         </div>
 
-        <!-- ✅ Full post view (hidden by default) -->
         <div id="full-post-view" class="hidden">
-            <div class="full-post" id="full-post-content">
-                <!-- Full post content appears here -->
-            </div>
+            <div class="full-post" id="full-post-content"></div>
         </div>
 
     </main>
@@ -228,16 +294,13 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <script>
-        // Store all posts
         let allPosts = [];
 
-        // Format date
         function formatDate(dateStr) {
             const d = new Date(dateStr);
             return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
         }
 
-        // Convert markdown to HTML (basic)
         function markdownToHtml(text) {
             return text
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
@@ -246,13 +309,63 @@
                 .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" />');
         }
 
-        // ✅ Show the full post
+        // ✅ Get the current post URL for sharing
+        function getPostUrl(slug) {
+            return window.location.origin + '/?post=' + slug;
+        }
+
+        // ✅ Share functions
+        function shareOn(slug, platform) {
+            const url = getPostUrl(slug);
+            const post = allPosts.find(p => p.slug === slug);
+            const title = post ? post.title : 'Check out this post';
+            let shareUrl = '';
+
+            switch(platform) {
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent(title + ' - ' + url)}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+                    break;
+                case 'telegram':
+                    shareUrl = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+                    break;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=500');
+            }
+        }
+
+        // ✅ Copy link to clipboard
+        function copyLink(slug) {
+            const url = getPostUrl(slug);
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.querySelector('.share-copy');
+                btn.classList.add('copied');
+                btn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = '<i class="fas fa-copy"></i><span>Copy Link</span><span class="tooltip">Copy to clipboard</span>';
+                }, 2000);
+            });
+        }
+
         function showPost(slug) {
             const post = allPosts.find(p => p.slug === slug);
             if (!post) return;
 
             document.getElementById('main-page').classList.add('hidden');
             document.getElementById('full-post-view').classList.remove('hidden');
+            
+            const postUrl = getPostUrl(slug);
             
             document.getElementById('full-post-content').innerHTML = `
                 <a href="#" class="back-link" onclick="showMainPage(); return false;">← Back to all posts</a>
@@ -263,14 +376,38 @@
                 <h1>${post.title}</h1>
                 ${post.image ? `<img src="${post.image}" alt="${post.title}" class="featured-image" />` : ''}
                 <div class="post-body">${markdownToHtml(post.body)}</div>
+                
+                <!-- ✅ SHARE BUTTONS -->
+                <div class="share-section">
+                    <p><i class="fas fa-share-alt"></i> Share this story:</p>
+                    <div class="share-buttons">
+                        <button class="share-btn share-whatsapp" onclick="shareOn('${post.slug}', 'whatsapp')">
+                            <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+                        </button>
+                        <button class="share-btn share-facebook" onclick="shareOn('${post.slug}', 'facebook')">
+                            <i class="fab fa-facebook-f"></i> <span>Facebook</span>
+                        </button>
+                        <button class="share-btn share-twitter" onclick="shareOn('${post.slug}', 'twitter')">
+                            <i class="fab fa-x-twitter"></i> <span>Twitter</span>
+                        </button>
+                        <button class="share-btn share-telegram" onclick="shareOn('${post.slug}', 'telegram')">
+                            <i class="fab fa-telegram-plane"></i> <span>Telegram</span>
+                        </button>
+                        <button class="share-btn share-linkedin" onclick="shareOn('${post.slug}', 'linkedin')">
+                            <i class="fab fa-linkedin-in"></i> <span>LinkedIn</span>
+                        </button>
+                        <button class="share-btn share-copy" onclick="copyLink('${post.slug}')">
+                            <i class="fas fa-copy"></i> <span>Copy Link</span>
+                            <span class="tooltip">Copy to clipboard</span>
+                        </button>
+                    </div>
+                </div>
             `;
 
-            // ✅ Update URL with the post slug
             history.pushState(null, '', `?post=${post.slug}`);
             document.title = `${post.title} - Security Connect Blog`;
         }
 
-        // ✅ Show the main page
         function showMainPage() {
             document.getElementById('main-page').classList.remove('hidden');
             document.getElementById('full-post-view').classList.add('hidden');
@@ -278,7 +415,6 @@
             document.title = 'Security Connect Blog';
         }
 
-        // Load all posts
         async function loadPosts() {
             try {
                 const response = await fetch('https://api.github.com/repos/Ebuks222/blog/contents/posts');
@@ -306,7 +442,6 @@
                     const excerptMatch = content.match(/excerpt:\s*["']?(.*?)["']?\n/);
                     const imageMatch = content.match(/image:\s*["']?(.*?)["']?\n/);
                     
-                    // Get body (everything after the front matter)
                     let body = content;
                     const bodyStart = content.indexOf('---', content.indexOf('---') + 3);
                     if (bodyStart !== -1) {
@@ -324,13 +459,9 @@
                     });
                 }
                 
-                // Sort posts by date (newest first)
                 allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-                
-                // Display posts on the main page
                 renderPosts();
                 
-                // ✅ Check if URL has a post parameter
                 const params = new URLSearchParams(window.location.search);
                 const postSlug = params.get('post');
                 if (postSlug) {
@@ -345,7 +476,6 @@
             }
         }
 
-        // Render posts on the main page
         function renderPosts() {
             const grid = document.getElementById('posts-grid');
             
@@ -373,7 +503,6 @@
             `).join('');
         }
 
-        // ✅ Handle browser back/forward buttons
         window.addEventListener('popstate', function() {
             const params = new URLSearchParams(window.location.search);
             const postSlug = params.get('post');
@@ -387,10 +516,8 @@
             }
         });
 
-        // Load posts when page loads
         loadPosts();
 
-        // Handle Netlify Identity login redirect
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on('init', user => {
                 if (!user) {

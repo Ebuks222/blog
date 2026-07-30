@@ -79,7 +79,6 @@
             color: #1a1a1a;
             margin-bottom: 12px;
         }
-        /* ✅ UPDATED: Link to individual post page */
         .post-card h2 a {
             color: inherit;
             text-decoration: none;
@@ -92,8 +91,6 @@
         }
         .post-card .excerpt { color: #3a3a3a; font-weight: 300; }
         .post-card .excerpt img { max-width: 100%; border-radius: 8px; margin: 12px 0; }
-        
-        /* ✅ UPDATED: Read more link to individual post page */
         .post-card .read-more {
             display: inline-block;
             margin-top: 16px;
@@ -224,17 +221,17 @@
                 const grid = document.getElementById('posts-grid');
                 posts.sort((a, b) => new Date(b.date) - new Date(a.date));
                 
-                // ✅ UPDATED: Links to individual post pages
+                // ✅ Links to post.html with ?post= format
                 grid.innerHTML = posts.map(post => `
                     <article class="post-card">
                         <div class="post-meta">
                             <span class="date">${formatDate(post.date)}</span>
                             ${post.category ? `<span class="category">${post.category}</span>` : ''}
                         </div>
-                        <h2><a href="/${post.slug}">${post.title}</a></h2>
+                        <h2><a href="/post.html?post=${post.slug}">${post.title}</a></h2>
                         ${post.image ? `<img src="${post.image}" alt="${post.title}" class="featured-image" />` : ''}
                         <div class="excerpt">${post.excerpt}</div>
-                        <a href="/${post.slug}" class="read-more">Read full story →</a>
+                        <a href="/post.html?post=${post.slug}" class="read-more">Read full story →</a>
                     </article>
                 `).join('');
                 

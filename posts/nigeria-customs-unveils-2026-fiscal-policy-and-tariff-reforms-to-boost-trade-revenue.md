@@ -1,20 +1,28 @@
 ---
-title: Nigeria Customs Unveils 2026 Fiscal Policy and Tariff Reforms to Boost
-  Trade, Revenue
-date: 2026-07-30T10:06:00.000+01:00
+title: AIG Garba Ahmed Urges Pioneer Graduates of Police Secondary School,
+  Dawakin Kudu, to Uphold Integrity and Excellence
+date: 2026-07-30T10:07:00.000+01:00
 ---
-The Nigeria Customs Service (NCS) has announced the implementation of the Federal Government's 2026 Fiscal Policy Measures and Tariff Amendments, a comprehensive reform package aimed at strengthening Nigeria's fiscal and trade policy framework, enhancing economic competitiveness, increasing revenue generation, and aligning the country's tariff regime with regional and international standards.
+The Assistant Inspector-General of Police in charge of Zone One Headquarters, Kano, AIG Garba Ahmed, has charged the pioneer graduating students of Police Secondary School, Dawakin Kudu, Kano State, to uphold the values of integrity, discipline, patriotism, and hard work as they embark on the next phase of their academic and personal journeys.
 
-The reforms, approved by President Bola Ahmed Tinubu, GCFR, introduce significant amendments to Nigeria's Customs and Excise Tariff framework. The measures are designed to support domestic industrial growth, facilitate legitimate trade, improve fiscal policy administration, and reinforce Nigeria's commitments under regional trade agreements.
+AIG Ahmed gave the charge while serving as the Reviewing Officer at the historic Passing Out Parade of the first set of graduating students of the institution, held on Saturday, July 25, 2026.
 
-In a statement issued by the National Public Relations Officer of the Nigeria Customs Service, Deputy Comptroller Abdullahi Maiwada, PhD, the Service noted that the new fiscal measures form part of the Federal Government's broader strategy to build a more transparent, competitive, and sustainable economy while strengthening Nigeria's position within the ECOWAS trade framework.
+Describing the event as a landmark in the history of the school, the AIG expressed gratitude to the Inspector-General of Police, Olatunji Rilwan Disu, and the Force Management Team for the confidence reposed in him to officiate at the memorable occasion.
 
-Among the major highlights of the reforms are the Revised Import Adjustment Tax (IAT) List for the implementation of the ECOWAS Common External Tariff (2022–2027), the Revised National List under the ECOWAS Common External Tariff, a Revised Import Prohibition List (Trade), an updated List of Goods Liable to Excise Duty, the introduction of a Green Tax Surcharge on motor vehicles with engine capacities of 2,000cc and above, and a Revised Export Prohibition List.
+Congratulating the graduating students, AIG Ahmed reminded them that, as the pioneer graduating class, they carry the responsibility of shaping the image and legacy of the institution through their future achievements.
 
-The Nigeria Customs Service urged importers, exporters, manufacturers, licensed customs agents, and other stakeholders to familiarise themselves with the amended tariff schedules and ensure full compliance with the new fiscal and regulatory requirements.
+"You are pioneers and ambassadors of this institution. The successes you record in life will define the image and legacy of this great institution. Therefore, remain disciplined, focused, and committed to the values of integrity, patriotism, and hard work," he said.
 
-To promote transparency and facilitate seamless implementation, the Service has made the complete 2026 Fiscal Policy Measures and Tariff Amendments available to stakeholders, encouraging all affected parties to review the updated provisions and align their operations accordingly.
+The AIG also commended parents, guardians, teachers, and members of staff for their sacrifices, dedication, and unwavering commitment to the students' success and the growth of the school.
 
-The implementation of these reforms is expected to strengthen Nigeria's trade environment, support local industries, improve revenue generation, and advance the country's long-term economic development objectives.
+He paid glowing tribute to Auwalu Abdullahi Rano, Chairman of AA Rano Nigeria Limited, for his significant investment in the development of infrastructure at Police Secondary School, Dawakin Kudu. He further applauded the philanthropist for supporting the renovation and transformation of the Zone One Police Headquarters in Kano, noting that the intervention has greatly enhanced the working environment for officers and personnel of the Zone.
 
-![](/assets/images/13694932-7541-4467-befd-eaee1feb0501.jpeg)
+AIG Ahmed equally acknowledged the contributions of Mustapha Ado Muhammad, Kabiru Ibrahim Kainuwa, Aminu Dawakin Kudu, and other benefactors whose support has contributed immensely to the development of the school.
+
+Speaking on behalf of the Inspector-General of Police and the school community, he expressed profound appreciation to all donors and supporters for their invaluable contributions to both the institution and the Nigeria Police Force, praying for Allah's abundant blessings upon them.
+
+The Zone One Police boss emphasized that education remains the foundation of national development and called on governments, corporate organizations, philanthropists, and other stakeholders to continue supporting the institution in its pursuit of academic excellence and character development.
+
+He concluded by congratulating the graduating students once again and wished them success in all their future endeavours.
+
+![](/assets/images/cf0c2b76-f4af-4ee9-8e5a-65ae080a7fce_f1153137-a760-4e91-a3fe-7ca7c1e13ae8.jpeg)

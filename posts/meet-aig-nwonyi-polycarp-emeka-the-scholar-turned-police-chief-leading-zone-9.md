@@ -1,7 +1,7 @@
 ---
 title: Meet AIG Nwonyi Polycarp Emeka--- The Scholar-Turned Police Chief Leading
   Zone 9.
-date: 2026-08-01T20:44:00.000+01:00
+date: 2026-08-01T20:45:00.000+01:00
 ---
 Regardless of where anyone stands on the legal outcome of the Maryam Sanda case, one lesson rises above every argument: anger can destroy lives in a matter of seconds.
 

@@ -1,7 +1,6 @@
 ---
-title: CP Oyeniyi Charges Officers on Professionalism, Human Rights and
-  Community Policing
-date: 2026-08-04T21:33:00.000+01:00
+title: CP Yemi Oyeniyi Reaffirms Commitment to People-Centred Policing
+date: 2026-08-04T22:02:00.000+01:00
 ---
 The Commissioner of Police, Delta State Command, CP Yemi Oyeniyi, psc, acipm, mnips, has reiterated his commitment to strengthening professionalism, accountability, and community policing, charging officers of the Command to uphold the highest standards of service in line with the vision of the Inspector-General of Police.
 

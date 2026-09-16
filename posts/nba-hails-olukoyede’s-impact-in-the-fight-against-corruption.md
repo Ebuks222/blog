@@ -1,5 +1,5 @@
 ---
-title: NBA hails Olukoyede’s impact in the fight against corruption
+title: NBA Hails Olukoyede’s Impact in the Fight Against Corruption
 date: 2026-09-17T00:14:00.000+01:00
 category: FIGHT AGAINST CORRUPTION
 ---

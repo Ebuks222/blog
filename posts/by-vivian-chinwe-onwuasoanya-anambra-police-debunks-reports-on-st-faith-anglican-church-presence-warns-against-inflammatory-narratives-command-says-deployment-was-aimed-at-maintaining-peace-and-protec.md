@@ -1,8 +1,8 @@
 ---
-title: By Vivian Chinwe Onwuasoanya   Anambra Police Debunks Reports on St.
-  Faith Anglican Church Presence, Warns Against Inflammatory Narratives Command
-  says deployment was aimed at maintaining peace and protecting lives, insists
-  police remain neutral in ecclesiastical dispute.
+title: " Anambra Police Debunks Reports on St. Faith Anglican Church Presence,
+  Warns Against Inflammatory Narratives Command says deployment was aimed at
+  maintaining peace and protecting lives, insists police remain neutral in
+  ecclesiastical dispute."
 date: 2026-10-19T19:07:00.000+01:00
 ---
 Command says deployment was aimed at maintaining peace and protecting lives, insists police remain neutral in ecclesiastical dispute.

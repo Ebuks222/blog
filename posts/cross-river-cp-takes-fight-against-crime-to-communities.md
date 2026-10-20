@@ -1,6 +1,6 @@
 ---
 title: "Cross River CP Takes Fight Against Crime to Communities "
-date: 2026-10-20T11:37:00.000+01:00
+date: 2026-10-20T11:41:00.000+01:00
 ---
 The Cross River State Commissioner of Police, CP Ajo Geoffrey Ordue, has called on traditional rulers, community leaders, youths and other stakeholders to strengthen collaboration with the police in tackling crime and maintaining peace across the state.
 
@@ -14,7 +14,7 @@ The engagement continued in Ikom on October 16, where Ordue reiterated the impor
 
 He stressed that effective policing depends not only on the efforts of security agencies but also on the willingness of residents to cooperate with them.
 
-\### CP Condemns Jungle Justice
+CP Condemns Jungle Justice
 
 The commissioner condemned jungle justice, warning residents against taking the law into their own hands whenever someone is suspected of committing a crime.
 
